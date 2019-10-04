@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.bloodbank.ui.auth.HomeViewModel" />
+    </data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/back_gray"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/gradient_back"
+        android:padding="15dp"
+        >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:src="@drawable/ic_keyboard_backspace_black_24dp"
+            android:textSize="16sp"
+            android:onClick="@{viewmodel::onBackClicked}"
+            android:textColor="@color/white"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_search_black_24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:src="@drawable/menu_item_back"
+            android:alpha="0.12"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="5 banks"
+            android:layout_centerVertical="true"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginStart="40dp"
+            />
+        <Button
+            android:layout_width="104dp"
+            android:layout_height="26dp"
+            android:text="Add Banks"
+            android:drawableStart="@drawable/ic_add_circle_outline_black_24dp"
+            android:background="@drawable/button_back_white"
+            android:textSize="10sp"
+            android:onClick="@{viewmodel::onAddbank}"
+            android:paddingStart="10dp"
+            android:layout_marginEnd="40dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:textAllCaps="false"
+            android:textColor="@color/red"
+            />
+    </RelativeLayout>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        />
+
+</LinearLayout>
+
+</layout>

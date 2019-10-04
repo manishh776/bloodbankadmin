@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.bloodbank.ui.auth.HomeViewModel" />
+    </data>
+    <LinearLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/gradient_back"
+        >
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textStyle="bold"
+                    android:src="@drawable/ic_keyboard_backspace_black_24dp"
+                    android:textSize="16sp"
+                    android:onClick="@{viewmodel::onBackClicked}"
+                    android:textColor="@color/white"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_search_black_24dp"
+                    android:text="Add Bank"
+                    android:layout_centerInParent="true"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    />
+            </RelativeLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    >
+
+        <EditText
+            android:id="@+id/bankname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_back"
+            android:layout_marginTop="38dp"
+            android:hint="bank name"
+            android:text="@={viewmodel.bankName}"
+            android:gravity="center_horizontal"
+            />
+
+        <EditText
+            android:id="@+id/bankusername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_back"
+            android:hint="bank username"
+            android:text="@={viewmodel.bankUsername}"
+            android:gravity="center_horizontal"
+            />
+
+        <EditText
+            android:id="@+id/bankpassw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_back"
+            android:hint="bank password"
+            android:text="@={viewmodel.bankPassword}"
+            android:gravity="center_horizontal"
+            />
+
+        <Button
+            android:id="@+id/button_login"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Add bank"
+            android:textAllCaps="false"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_size"
+            android:onClick="@{viewmodel::OnRegisterBankClick}"
+            android:background="@drawable/button_back_white"
+            />
+
+</LinearLayout>
+    </LinearLayout>
+
+</layout>
